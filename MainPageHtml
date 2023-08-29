@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ai Image Generator</title>
+</head>
+<body>
+  <div class="Generate">
+    <h1>Ai Image Generator</h1>
+    <div class="input-field">
+      <input type="text" id="prompt" placeholder="Enter prompt..." />
+    </div>
+    <button class="button" onclick="generateImage()">Generate</button>
+    <div id="result"></div>
+  </div><p></p><div id="p-div"></div>
+  <h1>About us</h1>
+  <p>Our database include more than 55 billions datas. Our AI is a fastest generative ai for image generation</p>
+  <h1>Try these promts: </h1>
+    <table class="try">
+        <tr>
+            <th>Promt</th>
+            <th>Try</th>
+        </tr>
+        <tr>
+            <td>Avatar man stnding in huge forest</td>
+            <td><button onclick="try1()">Try now</button></td>
+        </tr>
+        <tr>
+            <td>Very beautifull lanscape in mountains</td>
+            <td><button onclick="try2()">Try now</button></td>
+        </tr>
+        <tr>
+            <td>Realistic image of man with dreadlocks</td>
+            <td><button onclick="try3()">Try now</button></td>
+        </tr>
+    </table>
+  <h1>ChangeLog</h1>
+     <h3><code>1.0</code>  -  Added 12 millions files to database</h3><hr>
+     <h3><code>1.1</code>  -  Added 39 millions files to database</h3>
+  <p></p>
+  <h1>Source code</h1>
+  <h2>How it works?</h2>
+  <h3 class="coddes">This code is a JavaScript function called generateImage().<p></p> It takes user input from an HTML element with the id "prompt". 
+
+The code defines an array called <p></p>faces that contains URLs of different image categories. <p></p>
+
+If the user input includes the word "face",<p></p>the code selects a random URL from the faces array using Math.floor(Math.random() * faces.length). <p></p>
+
+If a valid URL is found, it clears the HTML content <p></p>of an element with the id "result". Otherwise, it displays the message "KVI database does not include this prompt. Try another."</h3>
+<button><a href="">Get code on GitHub</a></button>
+<p></p>
+</body>
+</html>
