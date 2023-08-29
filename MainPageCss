@@ -1,0 +1,94 @@
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000033; /* Dark blue background */
+      color: #00ccff; /* Cyan text color */
+      align-items: center;
+      background-image:
+          url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gHFxAsCYDnKzIAAAAIdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1QEnSflwAAAMxJREFUOE9j+A/PJ8+v0OzOSfURF98/rf5a2lz9G8Xq+y19f7g4ACvgbNBr159d/v/RWT1jx58f/e+/TMC2+lvr/698/M3V3/NaDrWDF6zDA2zAjCAUDL29cfkdmgFZxNGKkDiqQXMPhHlQYJ4ONSs59fAWMPMix8/JhxALXPSwVNxgYGV90whixAvEYEhgaFxfXwPGlJGVAIV3FgBDgKGOzAQMRwI+BtCxBNI+A9INsBBIfQ/S/A/p/w+OUaSUhgBSAQBFIAkGMgWMBEIQrDABAWBkgEcAYEEOwgBID1MKwEMgBIA0QDIClIwSBDCiDJEmUMSgpQDC+Qit4LSLSd85KTAAAAAElFTkSuQmCC");
+    }
+    
+    .Generate {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 51, 0.7); /* Semi-transparent dark blue background for the container */
+      border-radius: 10px;
+      border: 5px solid #00ccff;
+      box-shadow: 0 0 150px rgba(0, 204, 255, 0.6); /* Shadow effect for the result image */
+    }
+
+    .input-field {
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #00ccff; /* Cyan button background color */
+      color: #000033; /* Dark blue text color for the button */
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .result-image {
+      margin-top: 20px;
+      max-width: 100%;
+      border: 5px solid #00ccff;
+      border-radius: 5px;
+      box-shadow: 0 0 150px rgba(0, 204, 255, 0.6); /* Shadow effect for the result image */
+    }
+    
+    p, h1, h3, h2, h4, h5, h6 {
+      text-align: center;
+      
+    }
+
+    code {
+      background-color: #002b30;
+      border: none;
+      border-radius: 3px;
+    }
+    
+    #p-div {
+      height: 100px;
+    }
+
+     hr {
+       width: 50px;
+       background-color: #00ccff; 
+       color: #00ccff; 
+       border: 1px solid #00ccff;
+       border-radius: 5px;
+       box-shadow: 0 0 150px rgba(0, 204, 255, 0.6); /* Shadow effect for the result image */
+     }
+
+.try {
+    max-width: 1500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 51, 0.7);
+    border-radius: 10px;
+    border: 5px solid #00ccff;
+    box-shadow: 0 0 150px rgba(0, 204, 255, 0.6);
+}
+
+input {
+    margin: 0 auto;
+    padding: 15px;
+    background-color: rgba(0, 0, 51, 0.7);
+    border-radius: 10px;
+    border: 5px solid #00ccff;
+    box-shadow: 0 0 150px rgba(0, 204, 255, 0.6);
+    color: #00ccff;
+}
+
+.coddes {
+    text-align: center;
+}
