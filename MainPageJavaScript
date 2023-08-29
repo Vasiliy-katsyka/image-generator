@@ -1,0 +1,150 @@
+      // JavaScript code
+      function generateImage() {
+        var prompt = document.getElementById("prompt").value;
+        var result = null;
+        
+        // Defining arrays for different image categories
+        var faces = [
+          "https://avatars.mds.yandex.net/i?id=f9676dc9c99572353c509d298a0b9f6571edca4e-10514707-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=e02f3f0a7cab6ae7eba3b1209ba9d56dcc24715a-7552414-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=aa883402ff70aa4c6d77441e3b2f3fb85483a047-5480663-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=30ae3f522a50aea82e7c61444656a259dbc106af-7823046-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=0ffd2b2d3d6927fdd824ce3af649bdc2827bc72c-10092505-images-thumbs&n=13"
+        ];
+
+        var landscapes = [
+          "https://avatars.mds.yandex.net/i?id=d817020d4f33ce8dd5f012ec14b46026230f7f38-4304379-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=0c44f37e0f3240a7f873ade37dbf77d87be8d3a0-9103996-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=54432591615e90e906f554b6deb6a33ae47e56b0-7551636-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=ef1792a7e82c70fb5a12c0b159c061b31c1c2461-9237918-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=e2639ee50941423c94aab655b416c8e1db84a015-9712020-images-thumbs&n=13"
+        ];
+
+        var animals = [
+          "https://avatars.mds.yandex.net/i?id=a1a7b590d43b39c427304b03c180802c-5714596-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=4da68929c18e73e06c2332018658f2f344f4e56e-8567697-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=c4000087b8d4c591d887a3d21f25a76738cb3d21-5880141-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=d507afc55fdbef5d6c51aa82acbf2d06211b79d8-7051980-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=52bfb5b4c8638c1c5feecf49797240d0e4128425-9181120-images-thumbs&n=13"
+        ];
+
+        var car = [
+          "https://avatars.mds.yandex.net/i?id=4b8a4a2285b409371e8b45060db83d522fd7e3a8-9624682-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=5583a40b92d72bbaacd0726f5b7504b5bb41ec4f-8264916-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=f2bf530d35b3eb1e4a50db12a3f6347fca90504a-9609067-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=fa0f8f3c6411a8122be313df6c8adcf7d389d3c6-7552082-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=93519c6b3adf47b03313c2a325eb51e75018eeaa-10332876-images-thumbs&n=13"
+        ];
+
+        var food = [
+          "https://avatars.mds.yandex.net/i?id=aa2854aebae7aad2c9c84f9ca556823076924800-6974903-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=c9b4d7e1c5991af6efdc61d3a3f5b91c7b5790b8-5229803-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=f4ba649ad0017b1a8ad1bdba4c0b523e-4290971-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=045887a75bb76213d556631a67a27ce7c9df7b81-9716553-images-thumbs&n=13",
+          "https://avatars.mds.yandex.net/i?id=4b8a4a2285b409371e8b45060db83d522fd7e3a8-9624682-images-thumbs&n=13"
+        ];
+
+        var boat = [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7uC_XzpcX5FOfoPiKG-OR3O9-gTgRQ97t5dTW9kCtSKNRJ6Oz6J8fav5um1U&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDzZkpmyutasQm5JmkcwFCJ964i1SaShl5uZ2JWVysTJ-USU-m2g4jnGCJ3A&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIHj-QBEXroe_P-t8PVd7hVlA_XeQT2O9emiDb2dDODwOKU3GJM3XAo0BiLP8&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN_7Cg8g0GR0pHIsWlC6zucsVad6GJQeoxjZuCC6NtEYSi6iN3PD_oOqgMCs0&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbO69SuDBUWRxPmSaMvY9tUzvN3CPDGy6Qy7Ws88jgNHXtLDMJAv9dTYPKYbo&s"
+        ];
+
+        var logo = [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzDj5UHlSMn4JnM-LU1lDI5Gj8IyXoUGcPJFUW2L9g4ud_A2DEaCBVAlupLnE&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuEVbV_xtLzMDbVj9Hqfet_JoN7-L0uTflNS9szF9nxWWYtEiGrMnA4H_59EQ&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9m3Ifv2-Gqjlq6q2YefVARxit9uQYXVvrFkCXhXF2xvFxQoY2iFUCjRPBwA&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtS6eh12jeaQA5bVBKL-Vs2bbeUVE6i9i05-5qGjL6WyrSG-ipgR1x41DB49w&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxVnmLkyBugPNPiUPbE91e8M6hNm8MprUyECSMO_FrJ49maB-1AYvVBeI10fI&s"
+        ];
+
+        var eye = [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWYbVL4JZbaW2lRAFGhFw22TU2m1qpVjc8o7Z0PCGkOG3--FLJbwv_Errvwg&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSR6_WMsGOAfItkCMiFxNgXKmAZVOhsAH0yI-0cuecvH8SnbJZIw2t2VfwQ&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvJagN3MtIQPzKjextKbUHtF5Km_R5JXIPSq4LY8stLtCzrLHJhtCcXpiXpXo&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLHok8H8zbsX5Oupg5DJBxLcp6Tm6LAg4S0gJ3o5lpbXYeNm5j36sWI8DX1Q&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5a0d5jgLm6lOMHIFTC5NN0Bea6EItJJPo5mNa3oX5dwMf7dwDjoTW1SogTu0&s"
+        ];
+
+        var beard = [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiJOMp_SLFTOUXZCz9ssycWmh5Sn2WpE0AfIfnVdpooNqnqDT0n_gcpyzeMA&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO4dmmQnmxAP3_0AUBH031bbk-YMWnQNMIhEUxz6LV4JdPZ5ic0B3WhnEpXw&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpzFdwz_l57Nkuz089OMl8rZiKvr6zVLeyMbaQOTEKRk2e7Hgwr2tkCIkwsQ&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWFIOd5jPEVlc6hll0oyF3rbcOAWxAi8OF-BnCxAaCQBWWQDG_La69bmOm_g&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQO-zriw-KQA6JNr-Wg2vzlsd-JJBoAoDclFuEJ900j01XuMFpN0qB_QbJ5Hc&s"
+        ];
+
+        var avatar = [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhoGkHKK-mUcbSGNLNw_zM_vSGD5axZmiysJiKHz62-S1j61KVUypKeRZ6Jw&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpbv3vxSrrCksivuHDtAO7dZylFj0YoeB3xZ8ujV37046chtdbOlXQJNBuSg&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrD3u82KvAmb2sNdU5An5HTgr8uJAVHyD7878tdxoBtf8M_oBvKV1x5zDFmn8&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHKrlqz4evD_YlQqhwq6cCW5x6XkMxLZb4mFTqkuNTBe4hQCSBUa_KFIqWnw&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZknN5zWQt0C6vzbTjL2XkU0BZthLv0zUgrKoSyTgEO_5FeyVSl4oiSPKUWQI&s"
+        ];
+
+        var dreadlocks= [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJAdKXK3VacgTY6Slf3wYALB7d1yMfilkpYAMe4wwXmWq3uXCi981Kka5_bfE&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqpcvYkiKXkkEd7x2udV87zj4SXC60hwuzcqF9yHkRpPGh-nUwEPzqSGJwGQ&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6DPaqOivnFuLovOI_TuUWxfkLj4z9BmlFcvAhN2PEYBs9EAJdNEW1EDLBmS8&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM4hIEP519ofGPZPv3ZwvaZBElD2dZL1AFWmtwvNlHaxMX1ndew80eZ_bWWiM&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD8ReWbLVONl2rqPCSzVrl1UHCy92gC06Opfekhe1kvkvPiKPY9zRK_XT5fA&s"
+        ];
+
+        var soap = [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsgzD0uRzqZVq84N7upWTqLuf0UUBKVPrdlBFbYFtAJloSIsUogh6vEZEAnQ&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsfiDc8JlSL9f3Hchjp_kJ90BlbIlqzOKh1x8-cU7vBvqtVhp2MtOvkSMHGy4&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI0pzIuoZKeAhh0SkC6HOVFion1tkeGQbFwZ_vLZCNewuz22oWiEuHV7N8Ww&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIwxtneQ0cWI4W-vR3l6aPg6ngJc1A368AKUufCaP4s3Sf6meK-Gjb7WuPBg&s",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYazRp7i1fSoqCC0fTHi7NbIGnFhXkJQvKFZJ1WkticD0zjG_P5UK6KoaKDw&s"
+        ];
+
+
+
+
+        // Checking the prompt and selecting an image URL
+        if (prompt.includes("face")) {
+          result = faces[Math.floor(Math.random() * faces.length)];
+        } else if (prompt.includes("landscape")) {
+          result = landscapes[Math.floor(Math.random() * landscapes.length)];
+        } else if (prompt.includes("animal")) {
+          result = animals[Math.floor(Math.random() * animals.length)];
+        } else if (prompt.includes("car")) {
+          result = car[Math.floor(Math.random() * car.length)];
+        } else if (prompt.includes("food")) {
+          result = food[Math.floor(Math.random() * food.length)];
+        } else if (prompt.includes("boat")) {
+          result = boat[Math.floor(Math.random() * food.length)];
+        } else if (prompt.includes("logo")) {
+          result = logo[Math.floor(Math.random() * food.length)];
+        } else if (prompt.includes("eye")) {
+          result = eye[Math.floor(Math.random() * food.length)];
+        } else if (prompt.includes("beard")) {
+          result = beard[Math.floor(Math.random() * food.length)];
+        } else if (prompt.includes("dreadlocks")) {
+          result = dreadlocks[Math.floor(Math.random() * food.length)];
+        } else if (prompt.includes("avatar")) {
+          result = avatar[Math.floor(Math.random() * food.length)];
+        } else if (prompt.includes("soap")) {
+          result = soap[Math.floor(Math.random() * food.length)];
+        }
+
+        // Updating the result <div> with the generated image
+        if (result) {
+          document.getElementById("result").innerHTML = '<img class="result-image" src="' + result + '" />';
+        } else {
+          document.getElementById("result").innerHTML = '<p>KVI database not include this promt. try another</p>' ;
+        }
+      }
+      
+
+function try1() {
+    document.getElementById("prompt").value = "Avatar man standing in a huge forest";
+}
+function try2() {
+    document.getElementById("prompt").value = "Very beautiful landscape in mountains";
+}
+function try3() {
+    document.getElementById("prompt").value = "Realistic image of a man with dreadlocks";
+}
